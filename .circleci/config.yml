@@ -3,21 +3,21 @@ version: 2.1
 jobs:
   build:
     docker: circleci/node:13.8.0
-  steps:
-    - checkout:
-    - run:  npm run lint
+    steps:
+      - checkout:
+      - run:  npm run lint
 
   test:
     docker: circleci/node:13.8.0
-  steps:
-    - checkout:
-    - run:  npm run test
+    steps:
+      - checkout:
+      - run:  npm run test
 
   analyze:
     docker: circleci/node:13.8.0
-  steps:
-    - checkout:
-    - run:  npm audit
+    steps:
+      - checkout:
+      - run:  npm audit
 
 workflow:
   jobs:
